@@ -54,7 +54,6 @@ sales_data = {
 }
 
 t=total_sales(sales_data)
-
 best_selling_product(t)
 d=desending_order_store(sales_data)
 highest_selling_store(d)
