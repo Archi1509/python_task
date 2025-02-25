@@ -1,5 +1,4 @@
 def percentage(a,t):
-   
     return f"{(a/t)*100}%"
 def complaints_data(data):
     highest_complaints={key:value for key,value in sorted(complaints.items(),key=lambda ele:ele[1],reverse=True)}
@@ -13,10 +12,6 @@ def complaints_data(data):
         if complaint not in percentage_complaints_data:
             percentage_complaints_data[complaint]=percentage(count,total)
     print(percentage_complaints_data)
-
-
-
-
 
 complaints = {
     "Late Delivery": 120,
