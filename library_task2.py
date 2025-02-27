@@ -1,5 +1,6 @@
 from datetime import date
 import library_task1
+from datetime import datetime,timedelta,date
 class LibraryBorrowBooks:
     def __init__(self):
         self.borrow_books_data={}
@@ -10,8 +11,7 @@ class LibraryBorrowBooks:
     #     else:
     #         self.books[title] = (author, quantity)
     #     print(f'Book "{title}" added successfully.')
-
-    def borrow_book(self,username,title,borrowdate,duedate):
+    def borrow_book(self,username,title,borrowdate=date.today(),duedate=date.today()+timedelta(days=14)):
         if username in self.borrow_books_data and len(self.borrow_books_data[username])>=2:
             print(f"{username} have already borrowed 2 books.")
             return
@@ -54,19 +54,20 @@ class LibraryBorrowBooks:
                     print(f"Your book is overdue!{duedate}")
                 else:
                     print(f"You could keep the book till {duedate}")
-library = LibraryBorrowBooks()
-task1=library_task1.LibraryInventory()
-task1.add_book("Python Programming","John Andrew",3)
-task1.add_book("Data Science", "Jane Smith", 2)
-task1.add_book("Machine Learning", "Andrew Ng", 2)
+if __name__ == "__main__":
+    library = LibraryBorrowBooks()
+    task1=library_task1.LibraryInventory()
+    task1.add_book("Python Programming","John Andrew",3)
+    task1.add_book("Data Science", "Jane Smith", 2)
+    task1.add_book("Machine Learning", "Andrew Ng", 2)
 
-library.borrow_book("Archi","Data Science",date(2025,2,25),date(2025,3,1))
-library.borrow_book("Archi","Machine Learning",date(2025,2,25),date(2025,3,1))
-library.borrow_book("Archi","Data Science",date(2025,2,25),date(2025,3,1))
+    library.borrow_book("Archi","Data Science",date(2025,2,25),date(2025,3,1))
+    library.borrow_book("Archi","Machine Learning",date(2025,2,25),date(2025,3,1))
+    library.borrow_book("Archi","Data Science",date(2025,2,25),date(2025,3,1))
 
-library.display_borrowed_books()
-library.track_due_date()
-library.return_book("Archi","Data Science")
+    library.display_borrowed_books()
+    library.track_due_date()
+    library.return_book("Archi","Data Science")
 
 
 

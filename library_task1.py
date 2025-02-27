@@ -49,11 +49,13 @@ class LibraryInventory:
                 raise KeyError("Book not found in inventory.")
         except KeyError as e:
             print(e)
-library = LibraryInventory()
-library.add_book("Python", "John Doe", 5)
-library.add_book("java", "Jane Smith", 3)
-library.display_books()
-library.search_book("Python")
-library.update_book("Python ", quantity=10)
-library.remove_book("java")
-library.display_books()
+if __name__ == "__main__":
+
+    library = LibraryInventory()
+    library.add_book("Python", "John Doe", 5)
+    library.add_book("java", "Jane Smith", 3)
+    library.display_books()
+    library.search_book("Python")
+    library.update_book("Python ", quantity=10)
+    library.remove_book("java")
+    library.display_books()
