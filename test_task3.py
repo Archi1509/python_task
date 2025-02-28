@@ -45,6 +45,8 @@ while f:
         name=input("Enter name:")
         employee_id=input("Enter employee_id:")
         role=input("Enter role:")
+        if role!="Manager" or role!="Developer":
+            raise TypeError("Manager OR Developer Only.")
         salary=input("Enter Salary:")
         extra_info=input("Enter the following details:\n department for managers(DM) or programming language for developers.(PID)\n")
         employees_data[name]={employee_id:[role,salary,extra_info]}
